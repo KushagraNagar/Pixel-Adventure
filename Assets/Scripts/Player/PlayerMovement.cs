@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Managers")] 
     [SerializeField] private PauseManager pauseManager;
     
-    private float dirX = 0f;
+    public float dirX = 0f;
     private int airJumpCnt = 0;
     private bool isDashing = false;
     private float dashTimer = 0f;
@@ -172,6 +172,16 @@ public class PlayerMovement : MonoBehaviour
     }
     #endregion
 
+    public void TakeInput(float dirXX) 
+    {
+        dirX = dirXX;
+    }
+
+    public void JumpInput() 
+    {
+        Jump(jumpForce);
+    }
+
     public void SetData(CharacterDataSO.CharacterData charData)
     {
         charSprite.sprite = charData.charSprite;
@@ -277,7 +287,7 @@ public class PlayerMovement : MonoBehaviour
     private void Jump(float jumpF)
     {
         PlayParticleEffect(jumpEffect);
-        AudioManager.Instance.PlaySound(AudioType.characterJump);
+        //AudioManager.Instance.PlaySound(AudioType.characterJump);
         rb.velocity = new Vector2(rb.velocity.x, jumpF);
     }
 
