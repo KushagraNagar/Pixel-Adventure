@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float dashCoolDownTimer = 0f;
-    private bool canMove = true;
+    public bool canMove = true;
     
     private static readonly int animState = Animator.StringToHash("state");
 
@@ -297,7 +297,7 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(DisableMovement(0.15f));
         
         PlayParticleEffect(jumpEffect);
-        AudioManager.Instance.PlaySound(AudioType.characterJump);
+        //AudioManager.Instance.PlaySound(AudioType.characterJump);
         
         rb.velocity = charSprite.flipX ? new Vector2(wallJumpForce.x, wallJumpForce.y) : new Vector2(-wallJumpForce.x, wallJumpForce.y);
         

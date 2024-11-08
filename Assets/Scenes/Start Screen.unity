@@ -6868,22 +6868,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InsufficientLivesCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7338588054151080227, guid: 63e332b426140c942bab2eb7f2878caa, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7338588054151080227, guid: 63e332b426140c942bab2eb7f2878caa, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7338588054151080227, guid: 63e332b426140c942bab2eb7f2878caa, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7338588054151080227, guid: 63e332b426140c942bab2eb7f2878caa, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

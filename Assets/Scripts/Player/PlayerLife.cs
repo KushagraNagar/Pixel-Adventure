@@ -61,7 +61,7 @@ public class PlayerLife : MonoBehaviour
     {
         boxCollider.enabled = false;
         CameraShaker.Instance.ShakeCamera(5f, 0.25f);
-        AudioManager.Instance.PlaySound(AudioType.characterDeath);
+        //AudioManager.Instance.PlaySound(AudioType.characterDeath);
         animator.SetTrigger(deathAnim);
 
         LoseLife();

@@ -30,14 +30,7 @@ public class StartMenu : MonoBehaviour
 
     public void StartGame()
     {
-        if(PlayerPrefs.GetInt("LifeCount", 3) > 0)
-        {
-            LevelManager.Instance.GoToLatestUnlockedLevel();
-        }
-        else
-        {
-            OpenInsufficientLivesMenu();
-        }
+        LevelManager.Instance.GoToLatestUnlockedLevel();
     }
     
     public void OpenHomeMenu()
@@ -53,16 +46,9 @@ public class StartMenu : MonoBehaviour
     
     public void OpenLevelsMenu()
     {
-        if (PlayerPrefs.GetInt("LifeCount", 3) > 0)
-        {
-            CloseHomeMenu();
-            LevelsCanvas.enabled = true;
-            EventSystem.current.SetSelectedGameObject(firstSelectedLevelMenuObj);
-        }
-        else
-        {
-            OpenInsufficientLivesMenu();
-        }
+        CloseHomeMenu();
+        LevelsCanvas.enabled = true;
+        EventSystem.current.SetSelectedGameObject(firstSelectedLevelMenuObj);
     }
 
     public void CloseLevelsMenu()
