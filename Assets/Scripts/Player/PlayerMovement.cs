@@ -418,6 +418,49 @@ public class PlayerMovement : MonoBehaviour
             pauseManager.TogglePauseMenu();
     }
 
+
+    #region UI Button Methods
+
+    public void OnMoveLeftButtonDown()
+    {
+        dirX = -1f; // Move left
+    }
+
+    public void OnMoveRightButtonDown()
+    {
+        dirX = 1f; // Move right
+    }
+
+    public void OnMoveButtonUp()
+    {
+        dirX = 0f; // Stop moving
+    }
+
+    public void OnJumpButtonPress()
+    {
+        if (isOnWall() && !IsGrounded())
+        {
+            WallJump();
+        }
+        else
+        {
+            if (IsGrounded())
+            {
+                Jump(jumpForce);
+            }
+            else if (airJumpCnt < maxAirJumpCnt)
+            {
+                Jump(extraJumpForce);
+                airJumpCnt++;
+            }
+        }
+    }
+
+    #endregion
+
+
+
+
     #region Debug Methods
     [ContextMenu("Enable Double Jump")]
     private void EnableDoubleJump()

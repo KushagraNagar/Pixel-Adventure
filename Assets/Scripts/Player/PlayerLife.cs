@@ -51,6 +51,7 @@ public class PlayerLife : MonoBehaviour
     public void Die()
     {
         boxCollider.enabled = false;
+        rb.gravityScale = 0;
         CameraShaker.Instance.ShakeCamera(5f, 0.25f);
         AudioManager.Instance.PlaySound(AudioType.characterDeath);
         animator.SetTrigger(deathAnim);
@@ -95,7 +96,7 @@ public class PlayerLife : MonoBehaviour
     {
         boxCollider.enabled = true;
         playerMovement.Flip(true);
-        
+        rb.gravityScale = 3;
         if (checkpointManager.hasPassedAnyCheckPoints())
         {
             Vector3 pos = checkpointManager.GetLatestCheckPoint().position;
