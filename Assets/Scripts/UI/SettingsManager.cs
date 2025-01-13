@@ -18,12 +18,12 @@ public class SettingsManager : MonoBehaviour
 
     public void OnMusicVolumeChange()
     {
-        //AudioManager.Instance.musicVolumeChanged(musicVolumeSlider.value);
+        AudioManager.Instance.musicVolumeChanged(musicVolumeSlider.value);
     }
     
     public void OnEffectsVolumeChange()
     {
-        //AudioManager.Instance.effectVolumeChanged(effectsVolumeSlider.value);
+        AudioManager.Instance.effectVolumeChanged(effectsVolumeSlider.value);
     }
 
     private void SetVolumeSliderValues()

@@ -38,12 +38,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Managers")] 
     [SerializeField] private PauseManager pauseManager;
     
-    public float dirX = 0f;
+    private float dirX = 0f;
     private int airJumpCnt = 0;
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float dashCoolDownTimer = 0f;
-    public bool canMove = true;
+    private bool canMove = true;
     
     private static readonly int animState = Animator.StringToHash("state");
 
@@ -172,16 +172,6 @@ public class PlayerMovement : MonoBehaviour
     }
     #endregion
 
-    public void TakeInput(float dirXX) 
-    {
-        dirX = dirXX;
-    }
-
-    public void JumpInput() 
-    {
-        Jump(jumpForce);
-    }
-
     public void SetData(CharacterDataSO.CharacterData charData)
     {
         charSprite.sprite = charData.charSprite;
@@ -287,7 +277,7 @@ public class PlayerMovement : MonoBehaviour
     private void Jump(float jumpF)
     {
         PlayParticleEffect(jumpEffect);
-        //AudioManager.Instance.PlaySound(AudioType.characterJump);
+        AudioManager.Instance.PlaySound(AudioType.characterJump);
         rb.velocity = new Vector2(rb.velocity.x, jumpF);
     }
 
@@ -297,7 +287,7 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(DisableMovement(0.15f));
         
         PlayParticleEffect(jumpEffect);
-        //AudioManager.Instance.PlaySound(AudioType.characterJump);
+        AudioManager.Instance.PlaySound(AudioType.characterJump);
         
         rb.velocity = charSprite.flipX ? new Vector2(wallJumpForce.x, wallJumpForce.y) : new Vector2(-wallJumpForce.x, wallJumpForce.y);
         

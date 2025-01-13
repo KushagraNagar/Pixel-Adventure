@@ -46,9 +46,16 @@ public class StartMenu : MonoBehaviour
     
     public void OpenLevelsMenu()
     {
-        CloseHomeMenu();
-        LevelsCanvas.enabled = true;
-        EventSystem.current.SetSelectedGameObject(firstSelectedLevelMenuObj);
+        if (PlayerPrefs.GetInt("LifeCount", 3) > 0)
+        {
+            CloseHomeMenu();
+            LevelsCanvas.enabled = true;
+            EventSystem.current.SetSelectedGameObject(firstSelectedLevelMenuObj);
+        }
+        else
+        {
+            OpenInsufficientLivesMenu();
+        }
     }
 
     public void CloseLevelsMenu()

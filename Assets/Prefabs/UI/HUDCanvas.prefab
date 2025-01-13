@@ -234,8 +234,8 @@ RectTransform:
   m_GameObject: {fileID: 3294357283549880915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2185252305898123647}
   - {fileID: 6273473549368031385}
@@ -243,7 +243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -70}
+  m_AnchoredPosition: {x: 20, y: -109.55}
   m_SizeDelta: {x: 150, y: 60}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &4488123036779090707
@@ -263,7 +263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4621770929645467715
 RectTransform:
   m_ObjectHideFlags: 0
@@ -273,8 +273,8 @@ RectTransform:
   m_GameObject: {fileID: 4488123036779090707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3174723489007692345}
   - {fileID: 256796771377991409}
@@ -577,6 +577,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause-Button
       objectReference: {fileID: 0}
+    - target: {fileID: 5700756504853485879, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700756504853485879, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700756504853485879, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700756504853485879, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenPauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700756504853485879, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700756504853485879, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7015343968920360791, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -608,6 +632,18 @@ PrefabInstance:
     - target: {fileID: 7015343968920360791, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
       propertyPath: m_SizeDelta.y
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015343968920360791, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015343968920360791, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015343968920360791, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7015343968920360791, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
       propertyPath: m_LocalPosition.x
@@ -656,6 +692,10 @@ PrefabInstance:
     - target: {fileID: 7015343968920360791, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015343968920360791, guid: 45f2978cd4636ce4eaffb980cc68b697, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

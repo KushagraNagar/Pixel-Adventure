@@ -26,7 +26,7 @@ public class Finish : MonoBehaviour
         if (collision.gameObject.name == "Player" && !levelCompleted)
         {
             animator.SetTrigger(onCompleteAnim);
-            //AudioManager.Instance.PlaySound(AudioType.levelFinish);
+            AudioManager.Instance.PlaySound(AudioType.levelFinish);
             confetti.SetActive(true);
             
             checkpointManager.ClearCheckpoints();

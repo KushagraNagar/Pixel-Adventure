@@ -17,7 +17,7 @@ public class ItemCollector : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Cherry"))
         {
-            //AudioManager.Instance.PlaySound(AudioType.itemCollect);
+            AudioManager.Instance.PlaySound(AudioType.itemCollect);
             Destroy(collision.gameObject);
             cherries++;
             PlayerPrefs.SetInt("Foods", cherries);

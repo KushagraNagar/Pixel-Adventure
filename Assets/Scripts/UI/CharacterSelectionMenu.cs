@@ -83,16 +83,12 @@ public class CharacterSelectionMenu : MonoBehaviour
             selectBtn.interactable = false;
             selectBtnText.text = "SELECTED";
         }
-        else if (isCharAvailable(charData.characterData[currChar].charName))
+        else
         {
             selectBtn.interactable = true;
             selectBtnText.text = "SELECT";
         }
-        else
-        {
-            selectBtn.interactable = false;
-            selectBtnText.text = $"Unlocks at Level{GetCharUnlockLvl(currChar)}";
-        }
+
     }
 
     private void SetCharData()

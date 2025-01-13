@@ -9,8 +9,6 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCollider;
     
     [Header("Life counts")]
-    [SerializeField] private int LifeCount = 3;
-    [SerializeField] private int maxLifeBound = 100;
     [SerializeField] private TextMeshProUGUI heartsCount;
     // [SerializeField] private GameObject[] hearts;
     
@@ -47,45 +45,18 @@ public class PlayerLife : MonoBehaviour
         if (checkpointManager == null)
             checkpointManager = FindObjectOfType<CheckpointManager>();
 
-        int initLifeCnt = charData.playerLifeData.InitLifeCount;
-        LifeCount = PlayerPrefs.GetInt("LifeCount", initLifeCnt);
-        PlayerPrefs.SetInt("LifeCount", LifeCount);
         
-        maxLifeBound = charData.playerLifeData.MaxLivesBound;
-        
-        // SetHearts();
-        UpdateHeartsCountsUI();
     }
 
     public void Die()
     {
         boxCollider.enabled = false;
         CameraShaker.Instance.ShakeCamera(5f, 0.25f);
-        //AudioManager.Instance.PlaySound(AudioType.characterDeath);
+        AudioManager.Instance.PlaySound(AudioType.characterDeath);
         animator.SetTrigger(deathAnim);
 
-        LoseLife();
     }
 
-    private void LoseLife()
-    {
-        if (LifeCount > 0)
-        {
-            LifeCount--;
-        }
-        
-        PlayerPrefs.SetInt("LifeCount", LifeCount);
-    }
-
-    public void GiveLife(int count = 1)
-    {
-        if (LifeCount < maxLifeBound)
-        {
-            LifeCount += count;
-        }
-        
-        PlayerPrefs.SetInt("LifeCount", LifeCount);
-    }
 
     // private void SetHearts()
     // {
@@ -100,24 +71,24 @@ public class PlayerLife : MonoBehaviour
     //     hearts[LifeCount].SetActive(false);
     // }
 
-    private void UpdateHeartsCountsUI()
-    {
-        heartsCount.text = $"{LifeCount}";
-    }
-    
+
     private void CheckLifeStatus()
     {
         // DecreaseHearts();
-        UpdateHeartsCountsUI();
-        
+
+
+        Respawn();
+
+        /*
         if (LifeCount > 0)
         {
-            Respawn();
+
         }
         else
         {
             gameOverMenu.OpenGameOverMenu();
         }
+        */
     }
 
     private void Respawn()
